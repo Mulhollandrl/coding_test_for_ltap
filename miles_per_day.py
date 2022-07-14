@@ -34,12 +34,12 @@ def read_file(file_name):
         else:
             day = fix_date(line_array[date_updated_column_number].split(' ')[0])
 
-            miles = float(line_array[length_yds_column_number])
+            yards = float(line_array[length_yds_column_number])
 
             if day in file_dictionary:
-                file_dictionary[day] += miles
+                file_dictionary[day] += yards
             else:
-                file_dictionary[day] = miles
+                file_dictionary[day] = yards
 
     return file_dictionary
 
@@ -49,4 +49,4 @@ file_name = input("What is the name of the file you would like to use? \n")
 miles_day_dictionary = read_file(file_name)
 
 for date in sorted(miles_day_dictionary):
-    print(f"\nThere were {miles_day_dictionary[date]} miles of road completed on {date}")
+    print(f"\nThere were {miles_day_dictionary[date]/1760} miles of road completed on {date}")
