@@ -1,4 +1,6 @@
-Start: 7:10
+###BASIC ASSIGNMENT:
+
+Start: 7:10 PM
 
 I started by reading the description and instructions included with the coding assignment.
 
@@ -23,3 +25,21 @@ After that, I went into full planning mode. I wanted to list out everything that
 
 * **EXTRA:** I want to export the data as a spreadsheet with the days, and their corresponding number of miles.
   * I believe I can do this with pandas.
+
+
+After I was done with planning, I committed my project and pushed it to GitHub. I then got to work on the code itself. I also imported the CSV, as that might be helpful. 
+
+I had a hard time reading the CSV in PyCharm (my Python editor of choice), and so I uploaded it to Google Sheets. I did this in order to get a better idea of what the document was telling me, and where to get the information I am looking for. I saw that there were multiple dates, and took _Date Updated_ to be the column with when the project was complete. I saw that at the end of the CSV, there is a _LengthYds_ column, and used that for the length of road built. I looked up the conversion between yards and miles, as that will be helpful later in my project. For anyone curious, it is 1,760 yards to a mile.
+
+I was parsing through the data well, but was getting stuck due to the extra empty line at the bottom of the CSV. In order to deal with this, I checked to see if a line was only whitespace. I looked up how to do this on the internet, but none of them seemed to work, so I figured out my own workaround. I also found out that there is a part in the CSV (line 83) that has a line split in two for some reason. I fixed that.
+
+I was thinking, and I figured that a dictionary would probably work better for storing the day and miles completed pair. I looked up a quick refresher on those to jog my memory.
+
+I got the basic assignment done, but wanted to sort it to make it look much nicer. I used the sorted function to do that, but had to look that up as well.
+
+End: 9:24 PM
+
+Time Taken: 2 hours and 14 min
+
+
+<br>
