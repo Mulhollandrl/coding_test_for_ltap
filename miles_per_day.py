@@ -2,9 +2,14 @@
 # Coding Assignment for Utah LTAP
 # July 13th, 2022
 
-object_id_column_number = 0
+import matplotlib.pyplot as plt
+
+# The first two are the column numbers for their respective fields.
+# The last one is the conversion between yards and miles.
 date_updated_column_number = 84
 length_yds_column_number = 115
+yard_to_miles = 1760
+
 miles_day_dictionary = {}
 
 
@@ -22,13 +27,14 @@ def read_file(file_name):
     file_dictionary = {}
 
     file = open(file_name)
-    # I am wasting the first line in effect so that I can ensure that all the values are the type I expect
+    # The first line is always the labels, so I end up just wasting it, so it is pure data I am using
     file.readline()
 
     for line in file:
         line.strip('\n')
         line_array = line.split(',')
 
+        # This if else handles empty lines should they appear
         if len(line_array) <= 1:
             continue
         else:
@@ -41,7 +47,46 @@ def read_file(file_name):
             else:
                 file_dictionary[day] = yards
 
+    # Make sure to close the file!
+    file.close()
+
     return file_dictionary
+
+
+def find_year_data(data):
+    years = []
+    miles = []
+
+    for date in data.keys():
+        year = date.split('/')[0]
+
+        if year in years:
+            year_index = years.index(year)
+            miles[year_index] + data[date] / yard_to_miles
+        else:
+            years.append(year)
+            miles.append(data[date] / yard_to_miles)
+
+    return years, miles
+
+
+def plot_pie(data):
+    years, miles = find_year_data(data)
+
+    plt.pie(x=miles, labels=miles)
+    plt.legend(years, loc='center')
+    plt.title("Miles of road constructed per year")
+    plt.show()
+
+
+def plot_bar(data):
+    years, miles = find_year_data(data)
+
+    plt.bar(years, miles)
+    plt.title("Miles of road constructed per year")
+    plt.ylabel("Miles Constructed")
+    plt.xlabel("Year")
+    plt.show()
 
 
 file_name = input("What is the name of the file you would like to use? \n")
@@ -49,4 +94,10 @@ file_name = input("What is the name of the file you would like to use? \n")
 miles_day_dictionary = read_file(file_name)
 
 for date in sorted(miles_day_dictionary):
-    print(f"\nThere were {miles_day_dictionary[date]/1760} miles of road completed on {date}")
+    print(f"\nThere were {miles_day_dictionary[date] / yard_to_miles} miles of road completed on {date}")
+
+print("\n\nIt has now made two graphs, a pie chart, and a bar chart. "
+      "\nYou will see the bar chart first. If you exit out of the window, you will then see the pie chart.")
+
+plot_bar(miles_day_dictionary)
+plot_pie(miles_day_dictionary)

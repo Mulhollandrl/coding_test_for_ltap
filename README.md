@@ -43,3 +43,26 @@ Time Taken: 2 hours and 14 min
 
 
 <br>
+
+###EXTRA:
+
+Start: 9:54 PM
+
+I would like to start off this section by stating that I have not done too much with pandas, so this may be a lot of documentation saying that I looked things up.
+
+I started to use pandas, but found that it was not fitting my needs, and that matplotlib would likely work better for that. I decided to opt for matplotlib to display the graphs. I looked up how to display the graphs, as well as how to add titles and axes labels. I also looked up how to add a legend.
+
+I found out pretty quickly that there are too many days, and so I displayed the charts by year instead.
+
+I was able to complete the first part of the extra by 10:54 PM, so it took me about an hour. Most of this was due to me learning new material.
+
+End First Part: 10:54 PM
+
+
+<br>
+
+###END
+
+That is unfortunately all that I have time for. This has been a really fun and informative assignment. It has showed me a few points that I could improve on such as code styling, but has also shown me how much I know, and how much I can accomplish on my own. It was really fun to learn pandas, and then switch to learning matplotlib. I love both!
+
+
