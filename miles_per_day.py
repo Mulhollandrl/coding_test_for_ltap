@@ -10,8 +10,6 @@ date_updated_column_number = 84
 length_yds_column_number = 115
 yard_to_miles = 1760
 
-miles_day_dictionary = {}
-
 
 def fix_date(date):
     new_date = date.split('/')
@@ -89,6 +87,18 @@ def plot_bar(data):
     plt.show()
 
 
+def export_csv(data, file_name):
+    output = ""
+
+    for day in data.keys():
+        output += str(day) + ","
+        output += str(data[day]) + "\n"
+
+    file = open(file_name, 'w')
+    file.write(output)
+    file.close()
+
+
 file_name = input("What is the name of the file you would like to use? \n")
 
 miles_day_dictionary = read_file(file_name)
@@ -101,3 +111,7 @@ print("\n\nIt has now made two graphs, a pie chart, and a bar chart. "
 
 plot_bar(miles_day_dictionary)
 plot_pie(miles_day_dictionary)
+
+export_name = input("What filename would you like to use for the exported csv? (Please end it with .csv)\n")
+
+export_csv(miles_day_dictionary, export_name)

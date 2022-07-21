@@ -61,6 +61,14 @@ End First Part: 10:54 PM
 
 <br>
 
+Start: 9:08 PM
+
+This is the section where I will export a csv file.
+
+I had to look up how to create a file if it does not exist, but the rest of the process was pulled from memory.
+
+End: 9:22 PM
+
 ###END
 
 That is unfortunately all that I have time for. This has been a really fun and informative assignment. It has showed me a few points that I could improve on such as code styling, but has also shown me how much I know, and how much I can accomplish on my own. It was really fun to learn pandas, and then switch to learning matplotlib. I love both!
